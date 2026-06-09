@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_order_products
+    description: "Merged table using order and products table."
+    columns:
+      - name: orders_id
+        description: "The order id of the sale."
+        tests:
+          - not_null
+
