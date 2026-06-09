@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_raw__sales
+    description: "Cleaned and filtered staging table for raw sales."
+    columns:
+      - name: orders_id
+        description: "This column creates primary key with products_id."
+        tests:
+          - not_null
+  - name: stg_raw__products
+    description: "Cleaned and filtered staging table for raw products."
+    columns:
+      - name: products_id
+        description: "The primary key for this table."
+        tests:
+          - not_null
+          - unique
+          

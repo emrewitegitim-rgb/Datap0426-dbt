@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: course16
+    description: source dataset
+    tables:
+      - name: sales
+        identifier: gwz_sales
+        description: sale logs for gwz company
+        columns:
+          - name: orders_id
+            description: id of the order
+            tests:
+              - not_null
+              - unique:
+                  arguments:
+                    column_name: "orders_id || '-' || products_id"
+      - name: products
+        identifier: gwz_product
+        description: products list in gwz
+        columns:
+          - name: products_id
+            description: id of the product
+            tests:
+              - not_null
+              - unique
+              
+              
+              
